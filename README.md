@@ -1,5 +1,5 @@
 Testomatic: Andre's Quick and Dirty Checker 
-Documentation for v0.1.1.4
+Documentation for v0.1.2.0
 
 Created and written by: Andre Grindstaff (andre.grindstaff@student.csn.edu)
 
@@ -104,8 +104,11 @@ Test range (TEST_RANGE_START=0) and (TEST_RANGE_END=2):
 
 
 **FEATURES:**
-+ Auto submit (new): This allows you to submit your assignment without having
-    to type that long command! (will support custom commands via variable)
-    Note: Could not get it to work via using variable at this time.
-
++ Auto checker now tells you how many you got right (and wrong)! It'll just
+    show the short result for each correct in/output. But will print the full
+    verbose output if wrong.
++ Easy submit command is now shown as a variable!
+    (Easy submit allows you to submit your assignment without having to type that 
+    long command!)
++ Banner added!
 
