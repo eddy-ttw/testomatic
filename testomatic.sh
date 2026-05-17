@@ -2,11 +2,6 @@
 
 # Andre's quick and dirty checker
 
-# ---
-# NOTE:
-# This is the earliest version of the 0.1.x available
-# ---
-
 # Testing parameters
 # ------------------------
 PROJECT="pa04"
@@ -25,7 +20,7 @@ TEST_RANGE_END=2
 
 # init
 
-ver="0.1.1.3"
+ver="0.1.1.4"
 
 
 auto_checker () {
@@ -45,8 +40,25 @@ auto_checker () {
 
 }
 
+
+easy_submit () {
+    echo
+    echo "Submit assignment now? (y,n)"
+    read -t 10 -r -p "(y,n)" user_input
+    if [ "$user_input" == "y" ];
+    then
+        echo
+        eval $TURNIN_CMD
+    fi
+    echo
+}
+
+
 auto_checker
-# tbd: add auto submit
+easy_submit
+
+# tbd: add make easy submit optional/bypassable
+
 # tbd: parm support/handler
 
 

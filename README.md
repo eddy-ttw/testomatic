@@ -1,5 +1,5 @@
 Testomatic: Andre's Quick and Dirty Checker 
-Documentation for v0.1.1.3 (earliest)
+Documentation for v0.1.1.4
 
 Created and written by: Andre Grindstaff (andre.grindstaff@student.csn.edu)
 
@@ -39,6 +39,7 @@ suffix).
 1. Set up the environment, see the setting up section for more information.
 2. Run testomatic.sh in a command line.
 3. Receive the results of your work!
+4. Choose whether to submit or not!
 
 
 **SETTING UP:**
@@ -100,4 +101,11 @@ Test range (TEST_RANGE_START=0) and (TEST_RANGE_END=2):
     with the same prefix.
     
     This is a limitation of this version.
+
+
+**FEATURES:**
++ Auto submit (new): This allows you to submit your assignment without having
+    to type that long command! (will support custom commands via variable)
+    Note: Could not get it to work via using variable at this time.
+
 

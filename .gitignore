@@ -1,0 +1,6 @@
+# ignore user config file
+testomatic.cfg
+
+
+# ignore testing folder
+testing/
