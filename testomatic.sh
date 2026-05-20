@@ -2,11 +2,11 @@
 
 # Andre's quick and dirty checker
 
-# This project is now licensed under the MIT License
+# This project is licensed under the MIT License
+# Read the license file on the root folder of this project for more
+# information.
 
 # Copyright (C) 2026 Andre Grindstaff
-
-# Read 'LICENSE' for more information.
 
 
 # Testing parameters
@@ -28,7 +28,7 @@ TEST_RANGE_END=2
 
 # init
 
-ver="0.1.2.1"
+ver="0.1.3.0"
 
 declare -i a b fail_count
 
@@ -54,11 +54,16 @@ auto_checker () {
         if [ $output_grade_eval -eq 1 ];
         then
             echo "$output_grade"
-            fail_count=($fail_count - 1)
+            let --fail_count
+            #fail_count=($fail_count - 1)    # this backwards logic, makes sure
+                                            # if it has some error processing
+
+                                            # At least it'll be shown as an
+                                            # issue to the user
         else
             judge -p "$WORKING_DIR/$PROJECT" -i "$WORKING_DIR/$input" \
                 -o "$WORKING_DIR/$output" -t 1 -v
-            fail_count=($fail_count + 1)
+            #fail_count=($fail_count + 1)
         fi
         echo -----------------------------------------------------------
         echo
@@ -87,13 +92,71 @@ banner () {
 }
 
 help () {
-	# tbd
+    banner
+    echo "Parameters:"
+    echo "  --help"
+    echo "  help        Shows this screen"
+    echo
+    echo "  submit      Go to straight into submitting mode"
+    echo "  test        Only test"
+    echo
+
+    diag_info
 }
 
+diag_info () {
 
-auto_checker
-easy_submit
+    if [ $has_config == 1 ]; then
+        echo "  Configuration file is present"
+        echo
+        echo "Configuration and Environment Variables:"
+        echo "  Main configuration file:    $config_path"
+        echo "  Class environment:          $env_parent"
+        if [ $has_parent_env == 1 ]; then
+            echo "                              [Enabled]"
+        else
+            echo "                              [Not configured]"
+        fi
+        echo
+        echo "  Project environment:        $env_project"
+        if [ $has_project_env == 1 ]; then
+            echo "                              [Enabled]"
+        else
+            echo "                              [Not configured]"
+        fi
+        echo
+    fi
 
-# tbd: add make easy submit optional/bypassable
+    echo "Selected options:"
+    echo "  Project:    $PROJECT"
+    echo "  Class:      $CLASSID"
+    echo "  Command:    $TURNIN_CMD"
+    echo "      [Note] This is the exact command that will be run if you submit"
+    echo
+    echo "  Test range start: $TEST_RANGE_START"
+    echo "  Test range start: $TEST_RANGE_END"
+    echo
+    # more config will be loaded, to be implemented
+}
+
+if [ "$1" == "--help" ]; then
+    help
+elif [ "$1" == "help" ]; then
+    help
+else
+    if [ "$1" == "submit" ]; then
+        easy_submit
+    elif [ "$1" == "turnin" ]; then
+        easy_submit
+    elif [ "$1" == "test" ]; then
+        auto_checker
+    elif [ "%1" == "setup" ]; then
+        echo not available
+    else
+        auto_checker
+        easy_submit
+    fi
+    #goodbye
+fi
 
 exit 0

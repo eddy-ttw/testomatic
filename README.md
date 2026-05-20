@@ -1,5 +1,5 @@
 Testomatic: Andre's Quick and Dirty Checker 
-Documentation for v0.1.2.1
+Documentation for v0.1.3.0
 
 Created and written by: Andre Grindstaff (andre.grindstaff@student.csn.edu)
 
@@ -103,16 +103,34 @@ Test range (TEST_RANGE_START=0) and (TEST_RANGE_END=2):
 
     The project name, source, and executable must start with the same name /
     with the same prefix.
-    
+
     This is a limitation of this version.
 
 
+**CHANGELOG:**
++ Submit only mode: You can now immediately submit the assignment without having
+to do any further testing, so you can piecemeal update the assignment submission!
++ New diagnostic / environment information screen: The new screen that shows all
+your Testomatic environment confiruation. The project you're working on, the
+class name, the testing range and more!
++ Adds help screens: You can see how to use the new submit only mode and get
+information about the Testomatic configuration. 
++ Adds basic parameter support
+* Updated fail count logic: The logic was changed from rather than assuming the
+code is error-free, it will assume it is all incorrect, until checked. This 
+should have the effect that if there was any issue evaluating, it will at least
+state that it 'failed all the tests.'
++ Using the MIT license
+ 
+
 **FEATURES:**
-+ Auto checker now tells you how many you got right (and wrong)! It'll just
-    show the short result for each correct in/output. But will print the full
-    verbose output if wrong.
-+ Easy submit command is now shown as a variable!
-    (Easy submit allows you to submit your assignment without having to type that 
-    long command!)
-+ Banner added!
+* Auto Checker: Tells you how many you got right (and wrong)! It'll just
+show the short result for each correct in/output. But will print the full
+verbose output if wrong.
+
+* Easy submit: Submit JUDGE assignment after you test the program! Easy submit 
+allows you to submit your assignment without having to type that  long command!
+But you can now also type the following to submit now:
+    'testomatic submit'
+
 
