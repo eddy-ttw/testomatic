@@ -2,6 +2,13 @@
 
 # Andre's quick and dirty checker
 
+# This project is now licensed under the MIT License
+
+# Copyright (C) 2026 Andre Grindstaff
+
+# Read 'LICENSE' for more information.
+
+
 # Testing parameters
 # ------------------------
 PROJECT="pa04"
@@ -21,7 +28,7 @@ TEST_RANGE_END=2
 
 # init
 
-ver="0.1.2.0"
+ver="0.1.2.1"
 
 declare -i a b fail_count
 

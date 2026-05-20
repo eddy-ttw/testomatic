@@ -1,7 +1,11 @@
 Testomatic: Andre's Quick and Dirty Checker 
-Documentation for v0.1.2.0
+Documentation for v0.1.2.1
 
 Created and written by: Andre Grindstaff (andre.grindstaff@student.csn.edu)
+
+This project is licensed under the MIT License. View the 'LICENSE' file
+on the root folder of the project for more information.
+
 
 **HISTORY:**
 Testomatic is a shell script I wrote about a month into my C++ class at the
